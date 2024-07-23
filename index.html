@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number to Barcode Generator</title>
+    <title>Simple Barcode Generator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Number to Barcode Generator</h1>
+    <div class="controls">
+        <h1>Simple Barcode Generator</h1>
         <textarea id="numberInput" placeholder="Enter numbers (one per line)"></textarea>
         <button onclick="generateBarcodes()">Generate Barcodes</button>
-        <div id="barcodeContainer"></div>
+        <button onclick="window.print()">Print Barcodes</button>
+        <button onclick="clearBarcodes()">Clear Barcodes</button>
+
     </div>
+    <div id="barcodeContainer"></div>
     <script src="script.js"></script>
 </body>
 </html>

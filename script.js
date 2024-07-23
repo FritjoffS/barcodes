@@ -9,17 +9,24 @@ function generateBarcodes() {
         const barcodeDiv = document.createElement('div');
         barcodeDiv.className = 'barcode-item';
 
-        const canvas = document.createElement('canvas');
-        canvas.id = `barcode-${index}`;
-
-        barcodeDiv.appendChild(canvas);
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.id = `barcode-${index}`;
+        barcodeDiv.appendChild(svg);
         barcodeContainer.appendChild(barcodeDiv);
 
         JsBarcode(`#barcode-${index}`, number.trim(), {
             format: "CODE128",
             width: 2,
-            height: 100,
-            displayValue: true
+            height: 80,
+            displayValue: true,
+            fontSize: 12,
+            margin: 5
         });
     });
 }
+
+function clearBarcodes() {
+    document.getElementById('numberInput').value = '';
+    document.getElementById('barcodeContainer').innerHTML = '';
+}
+
